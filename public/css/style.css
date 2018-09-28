@@ -5,6 +5,10 @@ html,body {
     margin:0;
     position:relative;
     overflow: hidden; 
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
   }
 
   #canvas{
@@ -15,10 +19,9 @@ html,body {
 
   .char{
     float:left;
-    top:10%;
-    left:100%;
     position:relative;
     z-index: 1;
+    padding:0;
     opacity:0.8;
     -moz-opacity:0.8;
     -khtml-opacity: 0.8;
