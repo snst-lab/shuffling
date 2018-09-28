@@ -65,7 +65,7 @@ const shuffling = {
         if(typeof shuffling.QUERY['canvas'] !== 'undefined'){
             $('#canvas').css({'background':shuffling.QUERY['canvas']});
         } else{
-            $('#canvas').css({'background':'radial-gradient(circle, white, white, lightgray)'});
+            $('#canvas').css({'background':'radial-gradient(circle, white, white, darkgray)'});
         }
     },
 
