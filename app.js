@@ -138,7 +138,7 @@ const shuffling = {
         });
         $('.char').each(function (i) {
             $(this).click(function () {
-                speech[i].pitch = rand(1,2);    
+                speech[i].pitch = rand(0,2);    
                 speechSynthesis.speak(speech[i]);
                 var self = this;
                 $(self).css({ 'animation': 'glitch 500ms linear both' });
