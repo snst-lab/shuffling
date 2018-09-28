@@ -186,6 +186,6 @@ const audio = function(URL) {
 
 window.onload = function () {
     shuffling.main();
-    new audio('assets/audio/loop.mp3');
-    setInterval(function(){new audio('assets/audio/loop.mp3');},128000);
+    new audio('https://github.com/snst-lab/shuffling/blob/master/assets/audio/loop.mp3');
+    setInterval(function(){new audio('https://github.com/snst-lab/shuffling/blob/master/assets/audio/loop.mp3');},128000);
 }
