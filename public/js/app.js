@@ -90,7 +90,7 @@ const shuffling = {
         $('.char').each(function () {
             var fontsize = 0.8 * screen.width / 5 * rand(0.2, 3);
             shuffling.rotate(this, rand(500, 3000), rand(-1, 1));
-            $(this).animate({ 'top': rand(-50, 50) + 'vh', 'left': rand(-50, 50) + 'vw', 'font-size': fontsize }, 1800);
+            $(this).animate({ 'top': rand(-20, 120) + 'vh', 'left': rand(-50, 50) + 'vw', 'font-size': fontsize }, 1800);
         });
     },
 
@@ -187,5 +187,5 @@ const audio = function(URL) {
 window.onload = function () {
     shuffling.main();
     new audio('https://snst-lab.github.io/shuffling/public/assets/audio/loop.mp3');
-    setInterval(function(){new audio('https://snst-lab.github.io/shuffling/public/assets/audio/loop.mp3');},130000);
+    setInterval(function(){new audio('https://snst-lab.github.io/shuffling/public/assets/audio/loop.mp3');},132000);
 }
