@@ -20,7 +20,7 @@ const getQuery = function() {
 const shuffling = {
     QUERY : [],
     STRING: [],
-    DEFAULT_STRINGS: '古今東西',
+    DEFAULT_STRINGS: '十三不塔',
 
     main: function () {
         shuffling.QUERY = getQuery();
