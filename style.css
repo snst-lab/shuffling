@@ -1,0 +1,94 @@
+html,body {
+    width:100vw;
+    height:100vh;
+    padding:0;
+    margin:0;
+    position:relative;
+    overflow: hidden; 
+  }
+
+  #canvas{
+    position:absolute;
+    width:100vw;
+    height:100vh;
+  }
+
+  .char{
+    float:left;
+    top:10%;
+    left:100%;
+    position:relative;
+    z-index: 1;
+    opacity:0.8;
+    -moz-opacity:0.8;
+    -khtml-opacity: 0.8;
+    text-shadow: 0 7px 5px rgba(0, 0, 0, 0.5);
+    display:flex;
+  }
+
+
+  @keyframes glitch {
+  	0% { 
+      text-shadow: 10px 0 blue;
+    }
+    10%{
+      text-shadow: -10px 0 red;
+    }
+    20% {
+      text-shadow: 10px 0 red;
+    }
+    30% {
+      text-shadow: -10px 0 blue;
+    }
+    40% {
+      -webkit-clip-path: polygon(0 75%, 100% 75%, 100% 25%, 0 25%);
+      clip-path: polygon(0 75%, 100% 75%, 100% 25%, 0 25%);
+    }
+    45% {
+      -webkit-clip-path: polygon(0 100%, 100% 100%, 100% 50%, 0 50%);
+      clip-path: polygon(0 100%, 100% 100%, 100% 50%, 0 50%);
+    }
+    50% {
+      text-shadow: 10px 0 red;
+      -webkit-clip-path: polygon(0 0, 100% 0, 100% 50%, 0 50%);
+      clip-path: polygon(0 0, 100% 0, 100% 50%, 0 50%);
+    }
+    55%{
+      text-shadow: -10px 0 blue;
+      -webkit-clip-path: polygon(0 100%, 100% 100%, 100% 0, 0 0);
+      clip-path: polygon(0 100%, 100% 100%, 100% 0, 0 0);
+    }
+    60%{
+      text-shadow: 10px 0 blue;
+    }
+    65%{
+      text-shadow: -10px 0 red;
+    }
+    70%{
+      text-shadow: 10px 0 red;
+    }
+    80%{
+      text-shadow: -10px 0 blue;
+    }
+    85%{
+      text-shadow: 0 10px 5px rgba(0, 0, 0, 0.5);
+    }
+  }
+
+  @keyframes rotate-clock {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+  @keyframes rotate-counterclock {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(-360deg);
+    }
+  }
+  
