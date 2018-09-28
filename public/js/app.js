@@ -90,7 +90,7 @@ const shuffling = {
         $('.char').each(function () {
             var fontsize = 0.8 * screen.width / 5 * rand(0.2, 3);
             shuffling.rotate(this, rand(500, 3000), rand(-1, 1));
-            $(this).animate({ 'top': rand(-20, 120) + 'vh', 'left': rand(-50, 50) + 'vw', 'font-size': fontsize }, 1800);
+            $(this).animate({ 'top': rand(-50, 50) + 'vh', 'left': rand(-50, 50) + 'vw', 'font-size': fontsize }, 1800);
         });
     },
 
@@ -98,7 +98,7 @@ const shuffling = {
         var fontsize = 0.8 * screen.width / query.length;
         $('.char').each(function (i) {
             shuffling.rotateEnd(this, rand(500, 3000), rand(-1, 2));
-            $(this).animate({ 'top': '10%', 'left': '0%', 'font-size': fontsize }, 1000);
+            $(this).animate({ 'top': '0%', 'left': '0%', 'font-size': fontsize }, 1000);
         });
     },
 
