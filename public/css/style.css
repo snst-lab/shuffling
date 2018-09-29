@@ -91,48 +91,51 @@ html,body {
 
   @keyframes glitch {
   	0% { 
-      text-shadow: 10px -2px blue;
+      text-shadow: 12px -2px blue;
     }
     10%{
-      text-shadow: -10px -2px red;
+      text-shadow: -12px -2px red;
     }
     20% {
-      text-shadow: 10px -2px red;
+      text-shadow: 12px -2px red;
+      color:rgba(200,200,200,0.8);
     }
     30% {
-      text-shadow: -10px -2px blue;
+      text-shadow: -12px -2px blue;
+      color:rgba(0,0,0,0.8);
     }
     40% {
       -webkit-clip-path: polygon(0 75%, 100% 75%, 100% 25%, 0 25%);
       clip-path: polygon(0 75%, 100% 75%, 100% 25%, 0 25%);
     }
-    45% {
+    50% {
+      text-shadow: 12px 2px red;
       -webkit-clip-path: polygon(0 100%, 100% 100%, 100% 50%, 0 50%);
       clip-path: polygon(0 100%, 100% 100%, 100% 50%, 0 50%);
     }
-    50% {
-      text-shadow: 10px 2px red;
+    55%{
+      text-shadow: -12px 2px blue;
+
+    }
+    60%{
+      text-shadow: 12px 2px blue;
       -webkit-clip-path: polygon(0 0, 100% 0, 100% 50%, 0 50%);
       clip-path: polygon(0 0, 100% 0, 100% 50%, 0 50%);
     }
-    55%{
-      text-shadow: -10px 2px blue;
+    65%{
+      text-shadow: -12px 2px red;
+    }
+    70%{
+      text-shadow: 12px 2px red;
       -webkit-clip-path: polygon(0 100%, 100% 100%, 100% 0, 0 0);
       clip-path: polygon(0 100%, 100% 100%, 100% 0, 0 0);
     }
-    60%{
-      text-shadow: 10px 2px blue;
-    }
-    65%{
-      text-shadow: -10px 2px red;
-    }
-    70%{
-      text-shadow: 10px 2px red;
-    }
     80%{
-      text-shadow: -10px 2px blue;
+      color:rgba(200,200,200,0.8);
+      text-shadow: -12px 2px blue;
     }
     85%{
+      color:rgba(0,0,0,0.8);
       text-shadow: 0 5px 5px rgba(0, 0, 0, 0.5);
     }
   }

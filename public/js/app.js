@@ -19,42 +19,42 @@ const getQuery = function() {
 
 window.QUERY = getQuery();
 
-const shuffling = function(){
-    const shuffling = this;
+const Shuffling = function(){
+    const Shuffling = this;
 
-    shuffling.controller = function(){
+    Shuffling.controller = function(){
         var align = true;
         var interval = setInterval(function () {
-            shuffling.changeAction(shuffling.STRING);
+            Shuffling.changeAction(Shuffling.STRING);
         }, 2000);
         align = false;
     
         $('#canvas').on('click', function () {
             if (align) {
-                shuffling.changeAction(shuffling.STRING);
+                Shuffling.changeAction(Shuffling.STRING);
                 interval = setInterval(function () {
-                    shuffling.changeAction(shuffling.STRING);
+                    Shuffling.changeAction(Shuffling.STRING);
                 }, 2000);
                 align = false;
             }
             else {
-                shuffling.endAction(shuffling.STRING);
+                Shuffling.endAction(Shuffling.STRING);
                 clearInterval(interval);
                 align = true;
             }
         });
     }
 
-    shuffling.split = function (textByQuery) {
+    Shuffling.split = function (textByQuery) {
         if(typeof textByQuery !== 'undefined'){
             return textByQuery.split('');
         }
         else {
-            return shuffling.DEFAULT_STRINGS.split('');
+            return Shuffling.DEFAULT_STRINGS.split('');
         }
     }
 
-    shuffling.init = function (query) {
+    Shuffling.init = function (query) {
         var fontsize = 0.8 * screen.width / query.length;
         for (var i = 0; i < query.length; i++) {
             $('body').append($('<div>').addClass('char').css({ 'font-size': fontsize, 'top':'-100vh' }).text(query[i]));
@@ -62,23 +62,23 @@ const shuffling = function(){
 
     }
 
-    shuffling.changeAction = function (query) {
+    Shuffling.changeAction = function (query) {
         $('.char').each(function () {
             var fontsize = 0.8 * Math.max(screen.width,screen.height) / 5 * rand(0.2, 3);
-            shuffling.rotate(this, rand(500, 3000), rand(-1, 1));
+            Shuffling.rotate(this, rand(500, 3000), rand(-1, 1));
             $(this).animate({ 'top': rand(-50, 50) + 'vh', 'left': rand(-50, 50) + 'vw', 'font-size': fontsize }, 1800);
         });
     }
 
-    shuffling.endAction = function (query) {
+    Shuffling.endAction = function (query) {
         var fontsize = 0.8 * screen.width / query.length;
         $('.char').each(function (i) {
-            shuffling.rotateEnd(this, rand(500, 3000), rand(-1, 2));
+            Shuffling.rotateEnd(this, rand(500, 3000), rand(-1, 2));
             $(this).animate({ 'top': '0%', 'left': '0%', 'font-size': fontsize }, 1000);
         });
     }
 
-    shuffling.rotate = function (dom, msec, direction) {
+    Shuffling.rotate = function (dom, msec, direction) {
         if (direction > 0) {
             $(dom).css({ 'animation': 'rotate-clock ' + msec + 'ms linear infinite both' });
         }
@@ -90,7 +90,7 @@ const shuffling = function(){
         }
     }
 
-    shuffling.rotateEnd = function (dom, msec, direction) {
+    Shuffling.rotateEnd = function (dom, msec, direction) {
         if (direction > 0) {
             $(dom).css({ 'animation': 'rotate-clock ' + msec + 'ms linear both' });
         }
@@ -102,15 +102,15 @@ const shuffling = function(){
         }
     }
 
-    shuffling.DEFAULT_STRINGS = '十三不塔';
-    shuffling.STRING = shuffling.split(unescape(QUERY['text'].replace(/@@/g,'%')));
-    shuffling.init(shuffling.STRING);
-    shuffling.changeAction(shuffling.STRING);
-    shuffling.controller();
+    Shuffling.DEFAULT_STRINGS = '十三不塔';
+    Shuffling.STRING = Shuffling.split(unescape(QUERY['text'].replace(/@@/g,'%')));
+    Shuffling.init(Shuffling.STRING);
+    Shuffling.changeAction(Shuffling.STRING);
+    Shuffling.controller();
 }
 
 
-const speech = function () {
+const Speech = function () {
     var speech = [];
     $('.char').each(function (i) {
         var msg = new SpeechSynthesisUtterance($(this).text());
@@ -132,7 +132,7 @@ const speech = function () {
 }
 
 
-const audio = function(URL) {
+const Audio = function(URL) {
     window.AudioContext = window.AudioContext || window.webkitAudioContext;  
     window.CONTEXT = new AudioContext();
 
@@ -170,7 +170,7 @@ const audio = function(URL) {
 }
 
 
-const controller= function(){
+const Controller= function(){
     $("#music").on('click',function(){
         if($(this).attr('music')==='on'){
             $(this).attr({'music':'off'});
@@ -198,17 +198,17 @@ const controller= function(){
         $('#modal').css({'z-index':'-1'});
     });
     setTimeout(function(){$('.social').show()},2000);
-    $('.social.facebook a').attr({'href':'https://www.facebook.com/dialog/share?href=https://snst-lab.github.io/shuffling/public/redirect?text='+QUERY['text'] });
-    $('.social.twitter a').attr({'href':'https://twitter.com/intent/tweet?url=https://snst-lab.github.io/shuffling/public/redirect?text='+QUERY['text'] });
-    $('.social.google a').attr({'href':'https://plus.google.com/share?url=https://snst-lab.github.io/shuffling/public/redirect?text='+QUERY['text'] });
-    $('.social.line a').attr({'href':'http://line.me/R/msg/text/?https://snst-lab.github.io/shuffling/public/redirect?text='+QUERY['text'] });
+    $('.social.facebook a').attr({'href':'https://www.facebook.com/dialog/share?href=https://snst-lab.github.io/Shuffling/public/redirect?text='+QUERY['text'] });
+    $('.social.twitter a').attr({'href':'https://twitter.com/intent/tweet?url=https://snst-lab.github.io/Shuffling/public/redirect?text='+QUERY['text'] });
+    $('.social.google a').attr({'href':'https://plus.google.com/share?url=https://snst-lab.github.io/Shuffling/public/redirect?text='+QUERY['text'] });
+    $('.social.line a').attr({'href':'http://line.me/R/msg/text/?https://snst-lab.github.io/Shuffling/public/redirect?text='+QUERY['text'] });
     $('.social').click(function(){CONTEXT.suspend();});
 }
 
 
 window.onload = function () {
-    new shuffling();
-    new controller();
-    new speech();
-    new audio('https://snst-lab.github.io/shuffling/public/assets/audio/loop.mp3');
+    new Shuffling();
+    new Controller();
+    new Speech();
+    new Audio('https://snst-lab.github.io/Shuffling/public/assets/audio/loop.mp3');
 }

@@ -169,13 +169,14 @@ const Linebot = function(app) {
 
 var Main = function(app){
     const bot = new Linebot(app);
-  
+    const escape = require('unicode-escape');
+
     this.onMessageEvent = function(event){
-        event.replyFlex(
+      event.replyFlex(
             "Shuffling!",
             "アニメーションを生成",
             "メッセージから",
-            "https://snst-lab.github.io/shuffling/public/redirect?text="+event.message.text
+            "https://snst-lab.github.io/shuffling/public/redirect?text=" + escape(event.message.text).replace(/\\/g, "@@")
         );
     }
     
