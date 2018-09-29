@@ -25,13 +25,10 @@ html,body {
     font-size:3.5em;
     color:rgba(100,100,100,0.8);
     z-index:2;
+    -webkit-transition:.3s;
+    transition:.3s;
   }
-
-  i{
-      -webkit-transition:.3s;
-      transition:.3s;
-  }
-  i:hover{
+  .icon:hover{
       color:rgb(0, 200, 180);
   }
   #modal{
