@@ -199,6 +199,11 @@ const controller= function(){
         $('.social img').css({'width':'3rem','height':'3rem'});
         $('#modal').css({'z-index':'2'});
     });
+    $('.social').mouseenter(function(){ 
+        $('.social').css({'height':'3rem','font-size':'0.8em'});
+        $('.social img').css({'width':'3rem','height':'3rem'});
+        $('#modal').css({'z-index':'2'});
+    });
     $('#share').mouseleave(function(){ 
         $('.social').css({'height':'0','font-size':'0'});
         $('.social img').css({'width':'3rem','height':'0'});
