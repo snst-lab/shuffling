@@ -108,10 +108,10 @@ html,body {
     clip-path: polygon(0 75%, 100% 75%, 100% 0, 0 0);
   }
   20% {
-    text-shadow: 12px -2px blue;
+    text-shadow: -12px -2px blue;
   }
   25% {
-    text-shadow: 12px -2px red;
+    text-shadow: -12px -2px red;
   }
   30%{
     color:rgba(180,180,180,1.0);
@@ -142,10 +142,10 @@ html,body {
     clip-path: polygon(0 100%, 100% 100%, 100% 25%, 0 25%);
   }
   70%{
-    text-shadow: -12px 2px red;
+    text-shadow: 12px 2px red;
   }
   75%{
-    text-shadow: -12px 2px blue;
+    text-shadow: 12px 2px blue;
   }
   80%{
     color:rgba(180,180,180,1.0);
