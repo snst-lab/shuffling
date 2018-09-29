@@ -74,7 +74,7 @@ const shuffling = function(){
     shuffling.init = function (query) {
         var fontsize = 0.8 * screen.width / query.length;
         for (var i = 0; i < query.length; i++) {
-            $('body').append($('<div>').addClass('char').css({ 'font-size': fontsize }).text(query[i]));
+            $('body').append($('<div>').addClass('char').css({ 'font-size': fontsize, 'top':'-100vh' }).text(query[i]));
         }
 
     }
