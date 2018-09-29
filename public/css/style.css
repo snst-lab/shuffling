@@ -108,10 +108,10 @@ html,body {
     clip-path: polygon(0 75%, 100% 75%, 100% 0, 0 0);
   }
   20% {
-    text-shadow: -12px -2px blue;
+    text-shadow: 12px -2px blue;
   }
   25% {
-    text-shadow: -12px -2px red;
+    text-shadow: 12px -2px red;
   }
   30%{
     color:rgba(180,180,180,1.0);
@@ -128,10 +128,10 @@ html,body {
     clip-path: polygon(0 0, 100% 0, 100% 50%, 0 50%);
   }
   50%{
-    text-shadow: 12px 2px red;
+    text-shadow: -12px 2px red;
   }
   55%{
-    text-shadow: 12px 2px blue;
+    text-shadow: -12px 2px blue;
   }
   60%{
     -webkit-clip-path: polygon(0 0, 100% 0, 100% 25%, 0 25%);
@@ -149,6 +149,7 @@ html,body {
   }
   80%{
     color:rgba(180,180,180,1.0);
+    text-shadow: none;
   }
   85% {
     color:rgba(0,0,0,1.0);
