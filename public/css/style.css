@@ -1,159 +1,176 @@
 html,body {
-    width:100vw;
-    height:100vh;
-    padding:0;
-    margin:0;
-    position:relative;
-    overflow: hidden; 
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-family: 'Segoe UI', Meiryo;
-  }
+  width:100vw;
+  height:100vh;
+  padding:0;
+  margin:0;
+  position:relative;
+  overflow: hidden; 
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 游ゴシック体, 'Yu Gothic', YuGothic, 'ヒラギノ角ゴシック Pro', 'Hiragino Kaku Gothic Pro', メイリオ, Meiryo, Osaka, 'ＭＳ Ｐゴシック', 'MS PGothic', sans-serif;
+  font-weight:bold;
+}
 
-  #canvas{
-    position:absolute;
-    width:100vw;
-    height:100vh;
-    background : radial-gradient(circle, white,whitesmoke ,darkgray);
-  }
+#canvas{
+  position:absolute;
+  width:100vw;
+  height:100vh;
+  background : radial-gradient(circle, white,white ,darkgray);
+}
 
-  .icon{
+#modal{
     position:fixed;
-    bottom:3rem;
-    width:2rem;
-    height:2rem;
-    font-size:3.5em;
-    color:rgba(100,100,100,0.8);
-    z-index:2;
+    width:100vw;
+    height:100vh;
+    background:rgba(255,255,255,0.7);
+    z-index:-1;
     -webkit-transition:.3s;
     transition:.3s;
-    user-select:none;
-    -webkit-user-select:none;
-  }
-  .icon:hover{
-      color:rgb(0, 200, 180);
-  }
-  #modal{
-      position:fixed;
-      width:100vw;
-      height:100vh;
-      background:rgba(255,255,255,0.7);
-      z-index:-1;
-      -webkit-transition:.3s;
-      transition:.3s;
-  }
-  .social{
-    z-index:3;
-    position:fixed;
-    margin:auto;
-    right:0;
-    width:14rem;
+}
+
+.icon{
+  position:fixed;
+  bottom:3rem;
+  width:2rem;
+  height:2rem;
+  font-size:3.5em;
+  color:rgba(100,100,100,1.0);
+  z-index:2;
+  -webkit-transition:.3s;
+  transition:.3s;
+  user-select:none;
+  -webkit-user-select:none;
+}
+.icon:hover{
+    color:rgb(0, 200, 180);
+}
+
+.social{
+  z-index:3;
+  position:fixed;
+  margin:auto;
+  right:0;
+  width:14rem;
+  height:0;
+  font-size:0;
+  line-height:3rem;
+  color:rgb(10,10,10);
+  background:transparent;
+  -webkit-transition:.3s;
+  transition:.3s;
+  display:none;
+}
+.social a{
+    width:100%;
+}
+.social img{
+    clear:left;
+    width:3rem;
     height:0;
-    font-size:0;
-    line-height:3rem;
-    color:rgb(10,10,10);
-    background:transparent;
+}
+.social .text{
+    float:left;
+    height:0;
+    color:rgb(100,100,100);
+    margin-left:3.5rem;
     -webkit-transition:.3s;
     transition:.3s;
-    display:none;
+}
+.social .text:hover{
+  color:rgba(0, 200, 180);
+}
+
+.char{
+  float:left;
+  position:relative;
+  z-index: 1;
+  padding:0;
+  color:rgba(0,0,0,1.0);
+  text-shadow: 0 5px 5px rgba(0, 0, 0, 0.5);
+  user-select:none;
+  -webkit-user-select:none;
+}
+
+@keyframes glitch {
+  0% { 
+    text-shadow: 12px -2px blue;
   }
-  .social a{
-      width:100%;
+  5%{
+    text-shadow: 12px -2px red;
   }
-  .social img{
-      clear:left;
-      width:3rem;
-      height:0;
+  10%{
+    -webkit-clip-path: polygon(0 75%, 100% 75%, 100% 100%, 0 100%);
+    clip-path: polygon(0 75%, 100% 75%, 100% 100%, 0 100%);
   }
-  .social .text{
-      float:left;
-      height:0;
-      color:rgb(100,100,100);
-      margin-left:3.5rem;
-      -webkit-transition:.3s;
-      transition:.3s;
+  15%{
+    -webkit-clip-path: polygon(0 75%, 100% 75%, 100% 0, 0 0);
+    clip-path: polygon(0 75%, 100% 75%, 100% 0, 0 0);
   }
-  .social .text:hover{
-    color:rgba(0, 200, 180);
+  20% {
+    text-shadow: -12px -2px blue;
   }
-  .char{
-    float:left;
-    position:relative;
-    z-index: 1;
-    padding:0;
-    color:rgba(0,0,0,0.8);
+  25% {
+    text-shadow: -12px -2px red;
+  }
+  30%{
+    color:rgba(180,180,180,1.0);
+  }
+  35%{
+    color:rgba(0,0,0,1.0);
+  }
+  40% {
+    -webkit-clip-path: polygon(0 100%, 100% 100%, 100% 50%, 0 50%);
+    clip-path: polygon(0 100%, 100% 100%, 100% 50%, 0 50%);
+  }
+  45%{
+    -webkit-clip-path: polygon(0 0, 100% 0, 100% 50%, 0 50%);
+    clip-path: polygon(0 0, 100% 0, 100% 50%, 0 50%);
+  }
+  50%{
+    text-shadow: 12px 2px red;
+  }
+  55%{
+    text-shadow: 12px 2px blue;
+  }
+  60%{
+    -webkit-clip-path: polygon(0 0, 100% 0, 100% 25%, 0 25%);
+    clip-path: polygon(0 0, 100% 0, 100% 25%, 0 25%);
+  }
+  65%{
+    -webkit-clip-path: polygon(0 100%, 100% 100%, 100% 25%, 0 25%);
+    clip-path: polygon(0 100%, 100% 100%, 100% 25%, 0 25%);
+  }
+  70%{
+    text-shadow: -12px 2px red;
+  }
+  75%{
+    text-shadow: -12px 2px blue;
+  }
+  80%{
+    color:rgba(180,180,180,1.0);
+  }
+  85% {
+    color:rgba(0,0,0,1.0);
+  }
+  90%{
     text-shadow: 0 5px 5px rgba(0, 0, 0, 0.5);
-    user-select:none;
-    -webkit-user-select:none;
   }
+}
 
-
-  @keyframes glitch {
-  	0% { 
-      text-shadow: 12px -2px blue;
-    }
-    10%{
-      text-shadow: -12px -2px red;
-    }
-    20% {
-      text-shadow: 12px -2px red;
-      color:rgba(200,200,200,0.8);
-    }
-    30% {
-      text-shadow: -12px -2px blue;
-      color:rgba(0,0,0,0.8);
-    }
-    40% {
-      -webkit-clip-path: polygon(0 75%, 100% 75%, 100% 25%, 0 25%);
-      clip-path: polygon(0 75%, 100% 75%, 100% 25%, 0 25%);
-    }
-    50% {
-      text-shadow: 12px 2px red;
-      -webkit-clip-path: polygon(0 100%, 100% 100%, 100% 50%, 0 50%);
-      clip-path: polygon(0 100%, 100% 100%, 100% 50%, 0 50%);
-    }
-    55%{
-      text-shadow: -12px 2px blue;
-
-    }
-    60%{
-      text-shadow: 12px 2px blue;
-      -webkit-clip-path: polygon(0 0, 100% 0, 100% 50%, 0 50%);
-      clip-path: polygon(0 0, 100% 0, 100% 50%, 0 50%);
-    }
-    65%{
-      text-shadow: -12px 2px red;
-    }
-    70%{
-      text-shadow: 12px 2px red;
-      -webkit-clip-path: polygon(0 100%, 100% 100%, 100% 0, 0 0);
-      clip-path: polygon(0 100%, 100% 100%, 100% 0, 0 0);
-    }
-    80%{
-      color:rgba(200,200,200,0.8);
-      text-shadow: -12px 2px blue;
-    }
-    85%{
-      color:rgba(0,0,0,0.8);
-      text-shadow: 0 5px 5px rgba(0, 0, 0, 0.5);
-    }
+@keyframes rotate-clock {
+  0% {
+    transform: rotate(0deg);
   }
-
-  @keyframes rotate-clock {
-    0% {
-      transform: rotate(0deg);
-    }
-    100% {
-      transform: rotate(360deg);
-    }
+  100% {
+    transform: rotate(360deg);
   }
-  @keyframes rotate-counterclock {
-    0% {
-      transform: rotate(0deg);
-    }
-    100% {
-      transform: rotate(-360deg);
-    }
+}
+@keyframes rotate-counterclock {
+  0% {
+    transform: rotate(0deg);
   }
-  
+  100% {
+    transform: rotate(-360deg);
+  }
+}
