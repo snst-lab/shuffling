@@ -103,7 +103,7 @@ const shuffling = function(){
     }
 
     shuffling.DEFAULT_STRINGS = '十三不塔';
-    shuffling.STRING = shuffling.split(unescape(QUERY['text'].replace(/$/g,'%')));
+    shuffling.STRING = shuffling.split(unescape(QUERY['text'].replace(/@@/g,'%')));
     shuffling.init(shuffling.STRING);
     shuffling.changeAction(shuffling.STRING);
     shuffling.controller();
