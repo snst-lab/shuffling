@@ -160,6 +160,7 @@ const audio = function(URL) {
         gainNode.gain.value = 0.3; 
         gainNode.connect(CONTEXT.destination);
         source.connect(gainNode);
+        source.loop = true;
         source.start(0);
     };
 
@@ -209,5 +210,4 @@ window.onload = function () {
     new controller();
     new speech();
     new audio('https://snst-lab.github.io/shuffling/public/assets/audio/loop.mp3');
-    setInterval(function(){new audio('https://snst-lab.github.io/shuffling/public/assets/audio/loop.mp3');},132000);
 }
