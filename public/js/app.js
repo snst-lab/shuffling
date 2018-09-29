@@ -1,5 +1,4 @@
 const rand = (min, max) => Math.floor(Math.random() * (max - min + 1) + min);
-const sleep = (time) => {return new Promise(resolve => {setTimeout(() => {resolve()}, time)})};
 
 const getQuery = function() {
     var result = {};
