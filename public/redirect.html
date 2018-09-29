@@ -1,16 +1,18 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Redirect</title>
+    <title>Shuffling!</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, height=device-height">
     <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta property="og:image" content="https://snst-lab.github.io/shuffling/public/assets/img/icon.png">
+    <meta name ="description" content="Share your message as a text animation!">
 </head>
 <body>
     <script type="text/javascript">
         window.onload = function(){
             if (navigator.userAgent.match(/(Android)/)) {
-                location.href= "intent://"+ location.hostname +"/shuffling/public"+window.location.search+"#Intent;scheme=https;package=com.android.chrome;end";
+                location.href= "intent://"+ location.hostname +"/shuffling/public"+encodeURIComponent(window.location.search)+"#Intent;scheme=https;package=com.android.chrome;end";
             }
             else if(navigator.userAgent.match(/(iPhone|iPod|iPad|BlackBerry)/)){
                 location.href= "googlechromes://"+ location.hostname +"/shuffling/public"+window.location.search;
