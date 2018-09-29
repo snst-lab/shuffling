@@ -17,6 +17,63 @@ html,body {
     height:100vh;
   }
 
+  .icon{
+    position:fixed;
+    bottom:3rem;
+    width:2rem;
+    height:2rem;
+    font-size:4em;
+    color:rgba(100,100,100,0.8);
+    z-index:2;
+  }
+
+  i{
+      -webkit-transition:.3s;
+      transition:.3s;
+  }
+  i:hover{
+      color:rgb(0, 200, 180);
+  }
+  #modal{
+      position:fixed;
+      width:100vw;
+      height:100vh;
+      background:rgba(255,255,255,0.7);
+      z-index:-1;
+      -webkit-transition:.3s;
+      transition:.3s;
+  }
+  .social{
+    z-index:3;
+    position:fixed;
+    margin:auto;
+    right:0;
+    width:14rem;
+    height:0;
+    font-size:0;
+    line-height:3rem;
+    color:rgb(10,10,10);
+    background:transparent;
+    -webkit-transition:.3s;
+    transition:.3s;
+  }
+  .social a{
+      width:100%;
+  }
+  .social:hover{
+      background:rgb(0, 200, 180);
+  }
+  .social img{
+      clear:left;
+      width:3rem;
+      height:0;
+  }
+  .social .text{
+      float:left;
+      height:0;
+      color:rgb(100,100,100);
+      margin-left:3.5rem;
+  }
   .char{
     float:left;
     position:relative;
@@ -25,23 +82,24 @@ html,body {
     opacity:0.8;
     -moz-opacity:0.8;
     -khtml-opacity: 0.8;
-    text-shadow: 0 7px 5px rgba(0, 0, 0, 0.5);
-    display:flex;
+    text-shadow: 0 5px 5px rgba(0, 0, 0, 0.5);
+    user-select:none;
+    -webkit-user-select:none;
   }
 
 
   @keyframes glitch {
   	0% { 
-      text-shadow: 10px 0 blue;
+      text-shadow: 10px -2px blue;
     }
     10%{
-      text-shadow: -10px 0 red;
+      text-shadow: -10px -2px red;
     }
     20% {
-      text-shadow: 10px 0 red;
+      text-shadow: 10px -2px red;
     }
     30% {
-      text-shadow: -10px 0 blue;
+      text-shadow: -10px -2px blue;
     }
     40% {
       -webkit-clip-path: polygon(0 75%, 100% 75%, 100% 25%, 0 25%);
@@ -52,29 +110,29 @@ html,body {
       clip-path: polygon(0 100%, 100% 100%, 100% 50%, 0 50%);
     }
     50% {
-      text-shadow: 10px 0 red;
+      text-shadow: 10px 2px red;
       -webkit-clip-path: polygon(0 0, 100% 0, 100% 50%, 0 50%);
       clip-path: polygon(0 0, 100% 0, 100% 50%, 0 50%);
     }
     55%{
-      text-shadow: -10px 0 blue;
+      text-shadow: -10px 2px blue;
       -webkit-clip-path: polygon(0 100%, 100% 100%, 100% 0, 0 0);
       clip-path: polygon(0 100%, 100% 100%, 100% 0, 0 0);
     }
     60%{
-      text-shadow: 10px 0 blue;
+      text-shadow: 10px 2px blue;
     }
     65%{
-      text-shadow: -10px 0 red;
+      text-shadow: -10px 2px red;
     }
     70%{
-      text-shadow: 10px 0 red;
+      text-shadow: 10px 2px red;
     }
     80%{
-      text-shadow: -10px 0 blue;
+      text-shadow: -10px 2px blue;
     }
     85%{
-      text-shadow: 0 10px 5px rgba(0, 0, 0, 0.5);
+      text-shadow: 0 5px 5px rgba(0, 0, 0, 0.5);
     }
   }
 

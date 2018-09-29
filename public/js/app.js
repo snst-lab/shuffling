@@ -88,7 +88,7 @@ const shuffling = {
 
     changeAction: function (query) {
         $('.char').each(function () {
-            var fontsize = 0.8 * screen.width / 5 * rand(0.2, 3);
+            var fontsize = 0.8 * Math.max(screen.width,screen.height) / 5 * rand(0.2, 3);
             shuffling.rotate(this, rand(500, 3000), rand(-1, 1));
             $(this).animate({ 'top': rand(-50, 50) + 'vh', 'left': rand(-50, 50) + 'vw', 'font-size': fontsize }, 1800);
         });
@@ -184,8 +184,34 @@ const audio = function(URL) {
     });
 }
 
+const controller= function(){
+    $("#music").on('click',function(){
+        if($(this).attr('music')==='on'){
+            $(this).attr({'music':'off'});
+            $(this).text('music_off');
+        }else{
+            $(this).attr({'music':'on'});
+            $(this).text('music_note');
+        }
+    });
+    $('#share').mouseenter(function(){ 
+        $('.social').css({'height':'3rem','font-size':'0.8em'});
+        $('.social img').css({'width':'3rem','height':'3rem'});
+        $('#modal').css({'z-index':'2'});
+    });
+    $('#share').mouseleave(function(){ 
+        $('.social').css({'height':'0','font-size':'0'});
+        $('.social img').css({'width':'3rem','height':'0'});
+        $('#modal').css({'z-index':'-1'});
+    });
+
+    $('.social.google a').attr({'href':'https://plus.google.com/share?url=https://snst-lab.github.io/shuffling/public/redirect?'+location.search.substring(1)});
+    $('.social.line a').attr({'href':'http://line.me/R/msg/text/?https://snst-lab.github.io/shuffling/public/redirect?'+location.search.substring(1)});
+}
+
 window.onload = function () {
     shuffling.main();
+    new controller();
     new audio('https://snst-lab.github.io/shuffling/public/assets/audio/loop.mp3');
     setInterval(function(){new audio('https://snst-lab.github.io/shuffling/public/assets/audio/loop.mp3');},132000);
 }
