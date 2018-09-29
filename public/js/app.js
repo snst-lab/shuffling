@@ -103,7 +103,7 @@ const shuffling = function(){
     }
 
     shuffling.DEFAULT_STRINGS = '十三不塔';
-    shuffling.STRING = shuffling.split(QUERY['text']);
+    shuffling.STRING = shuffling.split(unescape(QUERY['text']));
     shuffling.init(shuffling.STRING);
     shuffling.changeAction(shuffling.STRING);
     shuffling.controller();
@@ -196,10 +196,10 @@ const controller= function(){
         $('.social img').css({'width':'3rem','height':'0'});
         $('#modal').css({'z-index':'-1'});
     });
-    $('.social.facebook a').attr({'href':'https://www.facebook.com/dialog/share?href=https://snst-lab.github.io/shuffling/public/redirect?text='+encodeURIComponent(QUERY['text'])});
-    $('.social.twitter a').attr({'href':'https://twitter.com/intent/tweet?url=https://snst-lab.github.io/shuffling/public/redirect?text='+encodeURIComponent(QUERY['text'])});
-    $('.social.google a').attr({'href':'https://plus.google.com/share?url=https://snst-lab.github.io/shuffling/public/redirect?text='+encodeURIComponent(QUERY['text'])});
-    $('.social.line a').attr({'href':'http://line.me/R/msg/text/?https://snst-lab.github.io/shuffling/public/redirect?text='+encodeURIComponent(QUERY['text'])});
+    $('.social.facebook a').attr({'href':'https://www.facebook.com/dialog/share?href=https://snst-lab.github.io/shuffling/public/redirect?text='+escape(QUERY['text'])});
+    $('.social.twitter a').attr({'href':'https://twitter.com/intent/tweet?url=https://snst-lab.github.io/shuffling/public/redirect?text='+escape(QUERY['text'])});
+    $('.social.google a').attr({'href':'https://plus.google.com/share?url=https://snst-lab.github.io/shuffling/public/redirect?text='+escape(QUERY['text'])});
+    $('.social.line a').attr({'href':'http://line.me/R/msg/text/?https://snst-lab.github.io/shuffling/public/redirect?text='+escape(QUERY['text'])});
 }
 
 
