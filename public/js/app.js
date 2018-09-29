@@ -209,7 +209,8 @@ const controller= function(){
         $('.social img').css({'width':'3rem','height':'0'});
         $('#modal').css({'z-index':'-1'});
     });
-
+    $('.social.facebook a').attr({'href':'https://www.facebook.com/dialog/share?href=https://snst-lab.github.io/shuffling/public/redirect?'+location.search.substring(1)});
+    $('.social.twitter a').attr({'href':'https://twitter.com/intent/tweet?url=https://snst-lab.github.io/shuffling/public/redirect?'+location.search.substring(1)});
     $('.social.google a').attr({'href':'https://plus.google.com/share?url=https://snst-lab.github.io/shuffling/public/redirect?'+location.search.substring(1)});
     $('.social.line a').attr({'href':'http://line.me/R/msg/text/?https://snst-lab.github.io/shuffling/public/redirect?'+location.search.substring(1)});
 }
