@@ -114,8 +114,8 @@ const Speech = function () {
     var speech = [];
     $('.char').each(function (i) {
         var msg = new SpeechSynthesisUtterance($(this).text());
-        var voices = speechSynthesis.getVoices();
-        msg.voice = voices[7];
+        // var voices = speechSynthesis.getVoices();
+        // msg.voice = voices[7];
         msg.rate = 1;
         msg.volume =1;
         speech.push(msg);
