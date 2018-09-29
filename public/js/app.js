@@ -103,6 +103,7 @@ const Shuffling = function(){
     }
 
     Shuffling.DEFAULT_STRINGS = '十三不塔';
+    QUERY['text'] = QUERY['text'] ||  Shuffling.DEFAULT_STRINGS;
     Shuffling.STRING = Shuffling.split(unescape(QUERY['text'].replace(/@@/g,'%')));
     Shuffling.init(Shuffling.STRING);
     Shuffling.changeAction(Shuffling.STRING);
@@ -198,10 +199,10 @@ const Controller= function(){
         $('#modal').css({'z-index':'-1'});
     });
     setTimeout(function(){$('.social').show()},2000);
-    $('.social.facebook a').attr({'href':'https://www.facebook.com/dialog/share?href=https://snst-lab.github.io/Shuffling/public/redirect?text='+QUERY['text'] });
-    $('.social.twitter a').attr({'href':'https://twitter.com/intent/tweet?url=https://snst-lab.github.io/Shuffling/public/redirect?text='+QUERY['text'] });
-    $('.social.google a').attr({'href':'https://plus.google.com/share?url=https://snst-lab.github.io/Shuffling/public/redirect?text='+QUERY['text'] });
-    $('.social.line a').attr({'href':'http://line.me/R/msg/text/?https://snst-lab.github.io/Shuffling/public/redirect?text='+QUERY['text'] });
+    $('.social.facebook a').attr({'href':'https://www.facebook.com/dialog/share?href=https://snst-lab.github.io/shuffling/public/redirect?text='+QUERY['text'] });
+    $('.social.twitter a').attr({'href':'https://twitter.com/intent/tweet?url=https://snst-lab.github.io/shuffling/public/redirect?text='+QUERY['text'] });
+    $('.social.google a').attr({'href':'https://plus.google.com/share?url=https://snst-lab.github.io/shuffling/public/redirect?text='+QUERY['text'] });
+    $('.social.line a').attr({'href':'http://line.me/R/msg/text/?https://snst-lab.github.io/shuffling/public/redirect?text='+QUERY['text'] });
     $('.social').click(function(){CONTEXT.suspend();});
 }
 
@@ -210,5 +211,5 @@ window.onload = function () {
     new Shuffling();
     new Controller();
     new Speech();
-    new Audio('https://snst-lab.github.io/Shuffling/public/assets/audio/loop.mp3');
+    new Audio('https://snst-lab.github.io/shuffling/public/assets/audio/loop.mp3');
 }
