@@ -190,12 +190,12 @@ const Controller= function(){
                 $(self).children('a').children('img').css({'width':'3rem','height':'3rem'});
             },80*i);
         });
-        $('#modal').css({'z-index':'2'});
+        $('#overlay').css({'z-index':'2'});
     });
     $('div').not( "#share" ).click(function(){ 
         $('.social').css({'height':'0','font-size':'0'});
         $('.social img').css({'width':'3rem','height':'0'});
-        $('#modal').css({'z-index':'-1'});
+        $('#overlay').css({'z-index':'-1'});
     });
     setTimeout(function(){$('.social').show()},2000);
     $('.social.facebook a').attr({'href':'https://www.facebook.com/dialog/share?href=https://snst-lab.github.io/shuffling/public/redirect?text='+QUERY['text'] });
