@@ -27,6 +27,8 @@ html,body {
     z-index:2;
     -webkit-transition:.3s;
     transition:.3s;
+    user-select:none;
+    -webkit-user-select:none;
   }
   .icon:hover{
       color:rgb(0, 200, 180);
@@ -57,9 +59,6 @@ html,body {
   .social a{
       width:100%;
   }
-  .social:hover{
-      background:rgb(0, 200, 180);
-  }
   .social img{
       clear:left;
       width:3rem;
@@ -70,6 +69,11 @@ html,body {
       height:0;
       color:rgb(100,100,100);
       margin-left:3.5rem;
+      -webkit-transition:.3s;
+      transition:.3s;
+  }
+  .social .text:hover{
+    color:rgba(0, 200, 180);
   }
   .char{
     float:left;
