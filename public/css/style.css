@@ -56,6 +56,7 @@ html,body {
     background:transparent;
     -webkit-transition:.3s;
     transition:.3s;
+    display:none;
   }
   .social a{
       width:100%;

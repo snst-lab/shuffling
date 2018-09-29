@@ -174,11 +174,11 @@ const controller= function(){
         if($(this).attr('music')==='on'){
             $(this).attr({'music':'off'});
             $(this).text('music_off');
-            CONTEXT.suspend()
+            CONTEXT.suspend();
         }else{
             $(this).attr({'music':'on'});
             $(this).text('music_note');
-            CONTEXT.resume()
+            CONTEXT.resume();
         }
     });
     $('#share').click(function(){
@@ -196,6 +196,7 @@ const controller= function(){
         $('.social img').css({'width':'3rem','height':'0'});
         $('#modal').css({'z-index':'-1'});
     });
+    setTimeout(function(){$('.social').show()},2000);
     $('.social.facebook a').attr({'href':'https://www.facebook.com/dialog/share?href=https://snst-lab.github.io/shuffling/public/redirect?text='+QUERY['text'] });
     $('.social.twitter a').attr({'href':'https://twitter.com/intent/tweet?url=https://snst-lab.github.io/shuffling/public/redirect?text='+QUERY['text'] });
     $('.social.google a').attr({'href':'https://plus.google.com/share?url=https://snst-lab.github.io/shuffling/public/redirect?text='+QUERY['text'] });
