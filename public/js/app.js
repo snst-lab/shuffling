@@ -188,7 +188,7 @@ const controller= function(){
             setTimeout(function(){
                 $(self).css({'height':'3rem','font-size':'0.8em'});
                 $(self).children('a').children('img').css({'width':'3rem','height':'3rem'});
-            },100*i);
+            },80*i);
         });
         $('#modal').css({'z-index':'2'});
     });
@@ -202,6 +202,7 @@ const controller= function(){
     $('.social.twitter a').attr({'href':'https://twitter.com/intent/tweet?url=https://snst-lab.github.io/shuffling/public/redirect?text='+QUERY['text'] });
     $('.social.google a').attr({'href':'https://plus.google.com/share?url=https://snst-lab.github.io/shuffling/public/redirect?text='+QUERY['text'] });
     $('.social.line a').attr({'href':'http://line.me/R/msg/text/?https://snst-lab.github.io/shuffling/public/redirect?text='+QUERY['text'] });
+    $('.social').click(function(){CONTEXT.suspend();});
 }
 
 
