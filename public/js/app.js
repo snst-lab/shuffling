@@ -209,8 +209,8 @@ const Controller= function(){
 
 
 window.onload = function () {
-    new Shuffling();
-    new Controller();
-    new Speech();
     new Audio('https://snst-lab.github.io/shuffling/public/assets/audio/loop.mp3');
+    new Shuffling();
+    new Speech();
+    new Controller();
 }
