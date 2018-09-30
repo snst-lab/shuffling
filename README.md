@@ -11,9 +11,9 @@ You can play by sending a message in quiz format to your friends.
  
 
 ##  Screenshots
-![Image of QR](https://snst-lab.github.io/shuffling/public/assets/img/screenshot1.png)
-![Image of QR](https://snst-lab.github.io/shuffling/public/assets/img/screenshot2.png)
-![Image of QR](https://snst-lab.github.io/shuffling/public/assets/img/screenshot3.png)
+![Image of Screenshot](https://snst-lab.github.io/shuffling/public/assets/img/screenshot1.jpg)
+![Image of Screenshot](https://snst-lab.github.io/shuffling/public/assets/img/screenshot2.jpg)
+![Image of Screenshot](https://snst-lab.github.io/shuffling/public/assets/img/screenshot3.jpg)
 
 ##  Usage
- <iframe width="560" height="315" src="https://www.youtube.com/embed/pzyNgw_JXFU" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+[![Image of usage](https://snst-lab.github.io/shuffling/public/assets/img/usage.jpg))](https://youtu.be/pzyNgw_JXFU)
