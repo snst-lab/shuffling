@@ -10,7 +10,7 @@ You can play by sending a message in quiz format to your friends.
 [![Image of button](https://scdn.line-apps.com/n/line_add_friends/btn/ja.png)](https://line.me/R/ti/p/%40lrz2407g)
  
 ##  Usage (Video)
-[![Image of usage](https://snst-lab.github.io/shuffling/public/assets/img/usage.jpg  | width=50%)](https://www.youtube.com/watch?v=pzyNgw_JXFU)
+[![Image of usage](https://snst-lab.github.io/shuffling/public/assets/img/usage.jpg)](https://www.youtube.com/watch?v=pzyNgw_JXFU)
 
 ##  Screenshots
 <img align="left" width="30%" src="https://snst-lab.github.io/shuffling/public/assets/img/screenshot1.jpg">
