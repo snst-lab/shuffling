@@ -9,6 +9,11 @@ You can play by sending a message in quiz format to your friends.
  
 [![Image of button](https://scdn.line-apps.com/n/line_add_friends/btn/ja.png)](https://line.me/R/ti/p/%40lrz2407g)
  
+
+##Google Text-to-Speech
+If you do not already have it, you need to install google text-to-speech and set it with settings > languages & input on your android device.
+ https://play.google.com/store/apps/details?id=com.google.android.tts&hl=en
+
 ##  Usage (Video)
 [![Image of usage](https://snst-lab.github.io/shuffling/public/assets/img/usage.jpg)](https://www.youtube.com/watch?v=pzyNgw_JXFU)
 
@@ -16,3 +21,4 @@ You can play by sending a message in quiz format to your friends.
 <img align="left" width="30%" src="https://snst-lab.github.io/shuffling/public/assets/img/screenshot1.jpg">
 <img align="left" width="30%" src="https://snst-lab.github.io/shuffling/public/assets/img/screenshot2.jpg">
 <img align="left" width="30%" src="https://snst-lab.github.io/shuffling/public/assets/img/screenshot3.jpg">
+

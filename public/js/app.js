@@ -113,19 +113,19 @@ const Shuffling = function(){
 
 
 const Speech = function () {
-    var speech = [];
-    $('.char').each(function (i) {
-        var msg = new SpeechSynthesisUtterance($(this).text());
-        // var voices = speechSynthesis.getVoices();
-        // msg.voice = voices[7];
-        msg.rate = 1;
-        msg.volume =1;
-        speech.push(msg);
-    });
+    var speeches = [];
+
+    $('.char').each(function () {
+        var speech = new SpeechSynthesisUtterance($(this).text());
+        speech.rate = 2;
+        speech.volume = 1;
+        speeches.push(speech);
+	});
+
     $('.char').each(function (i) {
         $(this).click(function () {
-            speech[i].pitch = rand(0,2);    
-            speechSynthesis.speak(speech[i]);
+            speeches[i].pitch = rand(0,2);    
+            window.speechSynthesis.speak(speeches[i]);
             var self = this;
             $(self).css({ 'animation': 'glitch 500ms linear both' });
             setTimeout(function(){$(self).css({ 'animation': 'none' });},1000);
