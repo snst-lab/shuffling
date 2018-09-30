@@ -9,3 +9,11 @@ You can play by sending a message in quiz format to your friends.
  
 [![Image of button](https://scdn.line-apps.com/n/line_add_friends/btn/ja.png)](https://line.me/R/ti/p/%40lrz2407g)
  
+
+##  Screenshots
+![Image of QR](https://snst-lab.github.io/shuffling/public/assets/img/screenshot1.png)
+![Image of QR](https://snst-lab.github.io/shuffling/public/assets/img/screenshot2.png)
+![Image of QR](https://snst-lab.github.io/shuffling/public/assets/img/screenshot3.png)
+
+##  Usage
+ <iframe width="560" height="315" src="https://www.youtube.com/embed/pzyNgw_JXFU" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
