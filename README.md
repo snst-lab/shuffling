@@ -10,8 +10,8 @@ You can play by sending a message in quiz format to your friends.
 [![Image of button](https://scdn.line-apps.com/n/line_add_friends/btn/ja.png)](https://line.me/R/ti/p/%40lrz2407g)
  
 
-##Google Text-to-Speech
-If you do not already have it, you need to install google text-to-speech and set it with settings > languages & input on your android device.
+##System Requirements
+If you do not already have it, you need to install google text-to-speech and set it with [Settings] > [Languages & Input] on your android device.
  https://play.google.com/store/apps/details?id=com.google.android.tts&hl=en
 
 ##  Usage (Video)
