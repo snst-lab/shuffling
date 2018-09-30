@@ -167,7 +167,7 @@ const Linebot = function(app) {
 }
 
 
-var Main = function(app){
+const Main = function(app){
     const bot = new Linebot(app);
     const escape = require('unicode-escape');
 
