@@ -12,7 +12,8 @@ You can play by sending a message in quiz format to your friends.
 
 ## System Requirements
 If you do not already have it, you need to install google text-to-speech and set it with [Settings] > [Languages & Input] on your android device.
- https://play.google.com/store/apps/details?id=com.google.android.tts&hl=en
+
+https://play.google.com/store/apps/details?id=com.google.android.tts&hl=en
 
 ##  Usage (Video)
 [![Image of usage](https://snst-lab.github.io/shuffling/public/assets/img/usage.jpg)](https://www.youtube.com/watch?v=pzyNgw_JXFU)
