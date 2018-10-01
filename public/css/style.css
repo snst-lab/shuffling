@@ -53,6 +53,7 @@ html,body {
   user-select:none;
   -webkit-user-select:none;
 }
+
 .icon:hover{
     color:rgb(0, 200, 180);
 }
@@ -71,6 +72,8 @@ html,body {
   -webkit-transition:.3s;
   transition:.3s;
   display:none;
+  user-select:none;
+  -webkit-user-select:none;
 }
 .social a{
     width:100%;
@@ -79,8 +82,6 @@ html,body {
     clear:left;
     width:3rem;
     height:0;
-    user-select:none;
-    -webkit-user-select:none;
 }
 .social .text{
     float:left;
@@ -89,8 +90,6 @@ html,body {
     margin-left:3.5rem;
     -webkit-transition:.3s;
     transition:.3s;
-    user-select:none;
-    -webkit-user-select:none;
 }
 .social .text:hover{
   color:rgba(0, 200, 180);

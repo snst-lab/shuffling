@@ -121,12 +121,12 @@ const Speech = function () {
         speech.rate = 3;
         speech.volume = 1;
         speeches.push(speech);
-	});
+    });
 
     $('.char').each(function (i) {
         $(this).click(function (event) {
             event.preventDefault();
-            speeches[i].pitch = rand(0,2);    
+            speeches[i].pitch = rand(0,2);   
             window.speechSynthesis.speak(speeches[i]);
             const self = this;
             $(self).css({ 'animation': 'glitch 500ms linear both' });
@@ -159,13 +159,14 @@ const Audio = function(URL) {
 
     const playSound = function(buffer) {  
         const source = CONTEXT.createBufferSource();
-        source.buffer = buffer;
         const gainNode = CONTEXT.createGain();
-        gainNode.gain.value = 0.3; 
+        source.buffer = buffer;
+        gainNode.gain.setValueAtTime(0, CONTEXT.currentTime)
+        gainNode.gain.linearRampToValueAtTime(0.4, CONTEXT.currentTime + 10)
         gainNode.connect(CONTEXT.destination);
         source.connect(gainNode);
         source.loop = true;
-        source.start(0);
+        source.start(CONTEXT.currentTime + 1);
     };
 
     getAudioBuffer(URL, function(buffer) {
@@ -204,10 +205,12 @@ const Controller= function(){
         $('.social img').css({'width':'3rem','height':'0'});
         $('#overlay').css({'z-index':'-1'});
     });
-    setTimeout(function(){$('.social').show()},2000);
+
+    setTimeout(function(){$('.social').show();},1000);
     $('.social.facebook a').attr({'href':'https://www.facebook.com/dialog/share?href=https://snst-lab.github.io/shuffling/public/redirect?text='+QUERY['text'] });
     $('.social.twitter a').attr({'href':'https://twitter.com/intent/tweet?url=https://snst-lab.github.io/shuffling/public/redirect?text='+QUERY['text'] });
     $('.social.google a').attr({'href':'https://plus.google.com/share?url=https://snst-lab.github.io/shuffling/public/redirect?text='+QUERY['text'] });
+    $('.social.heart a').attr({'href':'https://line.me/R/ti/p/%40lrz2407g' });
     $('.social.line a').attr({'href':'http://line.me/R/msg/text/?https://snst-lab.github.io/shuffling/public/redirect?text='+QUERY['text'] });
     $('.social').on('click',function(){
         CONTEXT.suspend();
