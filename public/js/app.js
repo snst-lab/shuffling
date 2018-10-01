@@ -5,20 +5,20 @@ const rand = (min, max) => Math.floor(Math.random() * (max - min + 1) + min);
 const getQuery = function() {
     var result = {};
     if ( 1 < location.search.length) {
-      var query = location.search.substring(1);
-      var parameters = query.split('&');
+      const query = location.search.substring(1);
+      const parameters = query.split('&');
   
       for (var i = 0; i < parameters.length; i++) {
-        var element = parameters[i].split('=');
-        var paramName = decodeURIComponent(element[0]);
-        var paramValue = decodeURIComponent(element[1]);
+        const element = parameters[i].split('=');
+        const paramName = decodeURIComponent(element[0]);
+        const paramValue = decodeURIComponent(element[1]);
         result[paramName] = paramValue;
       }
     }
     return result;
 }
 
-window.QUERY = getQuery();
+const QUERY = getQuery();
 
 const Shuffling = function(){
     const Shuffling = this;
@@ -128,7 +128,7 @@ const Speech = function () {
             event.preventDefault();
             speeches[i].pitch = rand(0,2);    
             window.speechSynthesis.speak(speeches[i]);
-            var self = this;
+            const self = this;
             $(self).css({ 'animation': 'glitch 500ms linear both' });
             setTimeout(function(){$(self).css({ 'animation': 'none' });},1000);
         });
@@ -137,10 +137,11 @@ const Speech = function () {
 
 
 const Audio = function(URL) {
+    const Audio = this;
     window.AudioContext = window.AudioContext || window.webkitAudioContext;  
     window.CONTEXT = new AudioContext();
 
-    const getAudioBuffer = function(url, fn) {  
+    Audio.getAudioBuffer = function(url, fn) {  
         var req = new XMLHttpRequest();
         req.responseType = 'arraybuffer';
 
@@ -157,7 +158,7 @@ const Audio = function(URL) {
         req.send('');
     };
 
-    const playSound = function(buffer) {  
+    Audio.playSound = function(buffer) {  
         const source = CONTEXT.createBufferSource();
         source.buffer = buffer;
         const gainNode = CONTEXT.createGain();
@@ -168,8 +169,8 @@ const Audio = function(URL) {
         source.start(0);
     };
 
-    getAudioBuffer(URL, function(buffer) {
-        playSound(buffer);
+    Audio.getAudioBuffer(URL, function(buffer) {
+        Audio.playSound(buffer);
     });
 }
 

@@ -141,10 +141,10 @@ const Linebot = function(app) {
       this.readDatabase = function(lineID,callback){
           return new Promise((resolve, reject) =>  {
               db.botstatus.findOne({ lineid: lineID }, (err, obj) =>{
-                   if(err == null && obj!=null){
+                   if(err === null && obj!=null){
                        resolve(obj.status);
                    }
-                   else if(err == null && obj==null){
+                   else if(err === null && obj===null){
                        resolve('action=null');
                    }
                    else{
@@ -156,7 +156,7 @@ const Linebot = function(app) {
 
       this.writeDatabase = function(lineID,status){
           db.botstatus.findOne({ lineid: lineID }, (err, obj) => {
-              if(obj==null){
+              if(obj===null){
                   db.botstatus.insert({'lineid':lineID,'status':status});  
               }
               else{
