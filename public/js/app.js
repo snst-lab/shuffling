@@ -173,7 +173,8 @@ const Audio = function(URL) {
 
 
 const Controller= function(){
-    $("#music").on('click',function(){
+    $('#music').on('click',function(event){
+        event.preventDefault();
         if($(this).attr('music')==='on'){
             $(this).attr({'music':'off'});
             $(this).text('music_off');
@@ -184,7 +185,8 @@ const Controller= function(){
             CONTEXT.resume();
         }
     });
-    $('#share').click(function(){
+    $('#share').click(function(event){
+        event.preventDefault();
         $('.social').each(function(i){
             var self = this;
             setTimeout(function(){
@@ -194,7 +196,8 @@ const Controller= function(){
         });
         $('#overlay').css({'z-index':'2'});
     });
-    $('div').not( "#share" ).click(function(){ 
+    $('#overlay').click(function(event){
+        event.preventDefault(); 
         $('.social').css({'height':'0','font-size':'0'});
         $('.social img').css({'width':'3rem','height':'0'});
         $('#overlay').css({'z-index':'-1'});
@@ -204,7 +207,10 @@ const Controller= function(){
     $('.social.twitter a').attr({'href':'https://twitter.com/intent/tweet?url=https://snst-lab.github.io/shuffling/public/redirect?text='+QUERY['text'] });
     $('.social.google a').attr({'href':'https://plus.google.com/share?url=https://snst-lab.github.io/shuffling/public/redirect?text='+QUERY['text'] });
     $('.social.line a').attr({'href':'http://line.me/R/msg/text/?https://snst-lab.github.io/shuffling/public/redirect?text='+QUERY['text'] });
-    $('.social').click(function(){CONTEXT.suspend();});
+    $('.social').click(function(event){
+        event.preventDefault(); 
+        CONTEXT.suspend();
+    });
 }
 
 
