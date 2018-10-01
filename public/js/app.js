@@ -30,7 +30,8 @@ const Shuffling = function(){
         }, 2000);
         align = false;
     
-        $('#canvas').on('click', function () {
+        $('#canvas').on('click', function (event) {
+            event.preventDefault();
             if (align) {
                 Shuffling.changeAction(Shuffling.STRING);
                 interval = setInterval(function () {
@@ -185,7 +186,7 @@ const Controller= function(){
             CONTEXT.resume();
         }
     });
-    $('#share').click(function(event){
+    $('#share').on('click',function(event){
         event.preventDefault();
         $('.social').each(function(i){
             var self = this;
@@ -196,7 +197,7 @@ const Controller= function(){
         });
         $('#overlay').css({'z-index':'2'});
     });
-    $('#overlay').click(function(event){
+    $('#overlay').on('click',function(event){
         event.preventDefault(); 
         $('.social').css({'height':'0','font-size':'0'});
         $('.social img').css({'width':'3rem','height':'0'});
@@ -207,7 +208,7 @@ const Controller= function(){
     $('.social.twitter a').attr({'href':'https://twitter.com/intent/tweet?url=https://snst-lab.github.io/shuffling/public/redirect?text='+QUERY['text'] });
     $('.social.google a').attr({'href':'https://plus.google.com/share?url=https://snst-lab.github.io/shuffling/public/redirect?text='+QUERY['text'] });
     $('.social.line a').attr({'href':'http://line.me/R/msg/text/?https://snst-lab.github.io/shuffling/public/redirect?text='+QUERY['text'] });
-    $('.social').click(function(event){
+    $('.social').on('click',function(event){
         event.preventDefault(); 
         CONTEXT.suspend();
     });
