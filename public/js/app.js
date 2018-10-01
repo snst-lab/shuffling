@@ -124,9 +124,8 @@ const Speech = function () {
     });
 
     $('.char').each(function (i) {
-        $(this).click(function (event) {
-            event.preventDefault();
-            speeches[i].pitch = rand(0,2);   
+        $(this).click(function () {
+            speeches[i].pitch = rand(1,2);   
             window.speechSynthesis.speak(speeches[i]);
             const self = this;
             $(self).css({ 'animation': 'glitch 500ms linear both' });
