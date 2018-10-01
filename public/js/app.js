@@ -56,7 +56,7 @@ const Shuffling = function(){
     }
 
     Shuffling.init = function (query) {
-        var fontsize = 0.8 * screen.width / Math.min(query.length,6);
+        var fontsize = 0.8 * screen.width / Math.min(query.length,5);
         for (var i = 0; i < query.length; i++) {
             $('body').append($('<div>').addClass('char').css({ 'font-size': fontsize, 'top':'-100vh' }).text(query[i]));
         }
@@ -72,7 +72,7 @@ const Shuffling = function(){
     }
 
     Shuffling.endAction = function (query) {
-        var fontsize = 0.8 * screen.width / Math.min(query.length,6);
+        var fontsize = 0.8 * screen.width / Math.min(query.length,5);
         $('.char').each(function (i) {
             Shuffling.rotateEnd(this, rand(500, 3000), rand(-1, 2));
             $(this).animate({ 'top': '0%', 'left': '0%', 'font-size': fontsize }, 1000);

@@ -5,11 +5,22 @@ html,body {
   margin:0;
   position:relative;
   overflow: hidden; 
-  display: flex;
-  align-items: center;
   justify-content: center;
   font-family: 游ゴシック体, 'Yu Gothic', YuGothic, 'ヒラギノ角ゴシック Pro', 'Hiragino Kaku Gothic Pro', メイリオ, Meiryo, Osaka, 'ＭＳ Ｐゴシック', 'MS PGothic', sans-serif;
   font-weight:bold;
+  display:-webkit-box;
+  display:-moz-box;
+  display:-ms-flexbox;
+  display:-webkit-flex;
+  display:-moz-flex;
+  display:flex;
+  -webkit-box-lines:multiple;
+  -moz-box-lines:multiple;
+  -webkit-flex-wrap:wrap;
+  -moz-flex-wrap:wrap;
+  -ms-flex-wrap:wrap;
+  flex-wrap:wrap;
+  align-items: center;
 }
 
 #canvas{
