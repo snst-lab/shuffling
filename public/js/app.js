@@ -209,8 +209,7 @@ const Controller= function(){
     $('.social.twitter a').attr({'href':'https://twitter.com/intent/tweet?url=https://snst-lab.github.io/shuffling/public/redirect?text='+QUERY['text'] });
     $('.social.google a').attr({'href':'https://plus.google.com/share?url=https://snst-lab.github.io/shuffling/public/redirect?text='+QUERY['text'] });
     $('.social.line a').attr({'href':'http://line.me/R/msg/text/?https://snst-lab.github.io/shuffling/public/redirect?text='+QUERY['text'] });
-    $('.social').on('click',function(event){
-        event.preventDefault(); 
+    $('.social').on('click',function(){
         CONTEXT.suspend();
     });
 }
