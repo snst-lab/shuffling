@@ -118,7 +118,7 @@ const Speech = function () {
 
     $('.char').each(function () {
         var speech = new SpeechSynthesisUtterance($(this).text());
-        speech.rate = 5;
+        speech.rate = 3;
         speech.volume = 1;
         speeches.push(speech);
 	});
