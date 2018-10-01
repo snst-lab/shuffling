@@ -180,7 +180,7 @@ const Main = function(app){
         );
     }
     
-    app.listen(process.env.PORT || 80, () => {
+    app.listen(process.env.PORT || 3000, () => {
         console.log('Server is running.');
     });
     bot.onMessageEvent(this.onMessageEvent);
