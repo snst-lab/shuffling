@@ -137,11 +137,10 @@ const Speech = function () {
 
 
 const Audio = function(URL) {
-    const Audio = this;
     window.AudioContext = window.AudioContext || window.webkitAudioContext;  
     window.CONTEXT = new AudioContext();
 
-    Audio.getAudioBuffer = function(url, fn) {  
+    const getAudioBuffer = function(url, fn) {  
         var req = new XMLHttpRequest();
         req.responseType = 'arraybuffer';
 
@@ -158,7 +157,7 @@ const Audio = function(URL) {
         req.send('');
     };
 
-    Audio.playSound = function(buffer) {  
+    const playSound = function(buffer) {  
         const source = CONTEXT.createBufferSource();
         source.buffer = buffer;
         const gainNode = CONTEXT.createGain();
@@ -169,8 +168,8 @@ const Audio = function(URL) {
         source.start(0);
     };
 
-    Audio.getAudioBuffer(URL, function(buffer) {
-        Audio.playSound(buffer);
+    getAudioBuffer(URL, function(buffer) {
+       playSound(buffer);
     });
 }
 
