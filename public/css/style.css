@@ -43,19 +43,21 @@ html,body {
 .icon{
   position:fixed;
   bottom:3rem;
-  width:2rem;
-  height:2rem;
-  font-size:3.5em;
-  color:rgba(100,100,100,1.0);
+  width:3.5rem;
+  height:3.5rem;
+  opacity: 0.8;
   z-index:2;
   -webkit-transition:.3s;
   transition:.3s;
   user-select:none;
   -webkit-user-select:none;
+  -webkit-filter: grayscale(100%);
+  filter: grayscale(100%);
 }
 
 .icon:hover{
-    color:rgb(0, 200, 180);
+  -webkit-filter: none;
+  filter: none;
 }
 
 .social{
