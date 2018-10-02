@@ -117,9 +117,15 @@ const Speech = function () {
     var speeches = [];
 
     $('.char').each(function () {
-        var speech = new SpeechSynthesisUtterance($(this).text());
-        speech.rate = 3;
+        const char = $(this).text();
+        var speech = new SpeechSynthesisUtterance(char);
+        speech.lang = 'ja-JP';
         speech.volume = 1;
+        if( char.match(/^[0-9a-zA-Zぁ-んァ-ン]+$/)){
+            speech.rate = 7;
+        }else{
+            speech.rate = 3;
+        }
         speeches.push(speech);
     });
 
@@ -206,10 +212,10 @@ const Controller= function(){
     });
 
     setTimeout(function(){$('.social').show();},1000);
+    $('.social.heart a').attr({'href':'https://line.me/R/ti/p/%40lrz2407g' });
     $('.social.facebook a').attr({'href':'https://www.facebook.com/dialog/share?href=https://snst-lab.github.io/shuffling/public/redirect?text='+QUERY['text'] });
     $('.social.twitter a').attr({'href':'https://twitter.com/intent/tweet?url=https://snst-lab.github.io/shuffling/public/redirect?text='+QUERY['text'] });
     $('.social.google a').attr({'href':'https://plus.google.com/share?url=https://snst-lab.github.io/shuffling/public/redirect?text='+QUERY['text'] });
-    $('.social.heart a').attr({'href':'https://line.me/R/ti/p/%40lrz2407g' });
     $('.social.line a').attr({'href':'http://line.me/R/msg/text/?https://snst-lab.github.io/shuffling/public/redirect?text='+QUERY['text'] });
     $('.social').on('click',function(){
         CONTEXT.suspend();
