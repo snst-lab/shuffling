@@ -74,10 +74,10 @@ const Linebot = function(app) {
            });
       }
       
-      event.replyFlex = function(title,message,button,uri){
+      event.replyFlex = function(/*title,message,button,uri...*/){
            event.reply([{
                "type": "flex",
-                "altText": title,
+                "altText": arguments[0],
                 "contents": {
                     "type": "bubble",
                     "styles": {
@@ -91,7 +91,7 @@ const Linebot = function(app) {
                         "contents": [
                             {
                                 "type": "text",
-                                "text": title
+                                "text": arguments[0]
                             }
                         ]
                     },
@@ -101,7 +101,7 @@ const Linebot = function(app) {
                         "contents": [
                             {
                                 "type": "text",
-                                "text": message,
+                                "text": arguments[1],
                                 "wrap": true
                             }
                         ]
@@ -114,16 +114,16 @@ const Linebot = function(app) {
                                 "type": "button",
                                 "action": {
                                     "type": "uri",
-                                    "label": "デフォルト",
-                                    "uri": "https://snst-lab.github.io/shuffling/public/redirect"
+                                    "label": arguments[2],
+                                    "uri": arguments[3]
                                 }
                             },
                             {
                                 "type": "button",
                                 "action": {
                                     "type": "uri",
-                                    "label": button,
-                                    "uri": uri
+                                    "label": arguments[4],
+                                    "uri": arguments[5]
                                 }
                             }
                         ]
@@ -174,7 +174,9 @@ const Main = function(app){
     this.onMessageEvent = function(event){
       event.replyFlex(
             "Shuffling!",
-            "アニメーションを生成",
+            "アニメーションを作成しました",
+            "サンプル",
+            "https://snst-lab.github.io/shuffling/public/redirect",
             "メッセージから",
             "https://snst-lab.github.io/shuffling/public/redirect?text=" + escape(event.message.text).replace(/\\/g, "@@")
         );

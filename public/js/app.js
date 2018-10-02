@@ -185,11 +185,11 @@ const Controller= function(){
         event.preventDefault();
         if($(this).attr('music')==='on'){
             $(this).attr({'music':'off'});
-            $(this).text('music_off');
+            $(this).attr("src","assets/icon/music_off.png");
             CONTEXT.suspend();
         }else{
             $(this).attr({'music':'on'});
-            $(this).text('music_note');
+            $(this).attr("src","assets/icon/music_on.png");
             CONTEXT.resume();
         }
     });
