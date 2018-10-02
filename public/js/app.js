@@ -118,9 +118,9 @@ const Speech = function () {
 
     $('.char').each(function () {
         const char = $(this).text();
-        if( char.match(/^[0-9a-zA-Zぁ-んァ-ン]+$/)){
+        if( char.match(/^[ぁ-んァ-ン]+$/)){
             var speech = new SpeechSynthesisUtterance(char+'ー');
-            speech.rate = 7;
+            speech.rate = 5;
         }else{
             var speech = new SpeechSynthesisUtterance(char);
             speech.rate = 3;
@@ -132,7 +132,7 @@ const Speech = function () {
 
     $('.char').each(function (i) {
         $(this).click(function () {
-            speeches[i].pitch = rand(1,2);   
+            speeches[i].pitch = rand(0,2);   
             window.speechSynthesis.speak(speeches[i]);
             const self = this;
             $(self).css({ 'animation': 'glitch 500ms linear both' });
