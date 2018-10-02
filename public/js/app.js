@@ -185,11 +185,11 @@ const Controller= function(){
         event.preventDefault();
         if($(this).attr('music')==='on'){
             $(this).attr({'music':'off'});
-            $(this).attr("src","https://snst-lab.github.io/shuffling/public/assets/icon/music_off.png");
+            $(this).attr({'src','https://snst-lab.github.io/shuffling/public/assets/icon/music_off.png'});
             CONTEXT.suspend();
         }else{
             $(this).attr({'music':'on'});
-            $(this).attr("src","https://snst-lab.github.io/shuffling/public/assets/icon/music_on.png");
+            $(this).attr({'src','https://snst-lab.github.io/shuffling/public/assets/icon/music_on.png'});
             CONTEXT.resume();
         }
     });
