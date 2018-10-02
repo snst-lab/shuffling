@@ -118,14 +118,15 @@ const Speech = function () {
 
     $('.char').each(function () {
         const char = $(this).text();
-        var speech = new SpeechSynthesisUtterance(char);
-        speech.lang = 'ja-JP';
-        speech.volume = 1;
         if( char.match(/^[0-9a-zA-Zぁ-んァ-ン]+$/)){
+            var speech = new SpeechSynthesisUtterance(char+'ー');
             speech.rate = 7;
         }else{
+            var speech = new SpeechSynthesisUtterance(char);
             speech.rate = 3;
         }
+        speech.lang = 'ja-JP';
+        speech.volume = 1;
         speeches.push(speech);
     });
 

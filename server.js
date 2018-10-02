@@ -174,7 +174,7 @@ const Main = function(app){
     this.onMessageEvent = function(event){
       event.replyFlex(
             "Shuffling!",
-            "アニメーションを作成しました",
+            "アニメーションを作成",
             "サンプル",
             "https://snst-lab.github.io/shuffling/public/redirect",
             "メッセージから",
