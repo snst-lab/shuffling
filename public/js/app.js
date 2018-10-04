@@ -184,7 +184,7 @@ const Audio = function(URL) {
 const Controller= function(){
     $('body').on('click',function(event){
         event.preventDefault();
-        if(!MUSIC){
+        if(typeof MUSIC==='undefined'){
             new Audio('https://snst-lab.github.io/shuffling/public/assets/audio/loop.mp3');
         }
     });
