@@ -185,6 +185,7 @@ const Controller= function(){
     $('body').on('click',function(event){
         event.preventDefault();
         if(typeof MUSIC==='undefined'){
+            console.log('start');
             new Audio('https://snst-lab.github.io/shuffling/public/assets/audio/loop.mp3');
         }
     });
