@@ -42,7 +42,7 @@ html,body {
 
 .icon{
   position:fixed;
-  bottom:3rem;
+  bottom:2rem;
   width:3.5rem;
   height:3.5rem;
   opacity: 0.8;
@@ -55,7 +55,12 @@ html,body {
   filter: grayscale(100%);
 }
 
-.icon:hover{
+#music-off{
+  -webkit-filter: none;
+  filter: none;
+}
+
+#share:hover{
   -webkit-filter: none;
   filter: none;
 }

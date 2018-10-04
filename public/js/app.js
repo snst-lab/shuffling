@@ -144,7 +144,7 @@ const Speech = function () {
 
 const Audio = function(URL) {
     window.AudioContext = window.AudioContext || window.webkitAudioContext;  
-    window.CONTEXT = new AudioContext();
+    window.MUSIC = new AudioContext();
 
     const getAudioBuffer = function(url, fn) {  
         var req = new XMLHttpRequest();
@@ -153,7 +153,7 @@ const Audio = function(URL) {
         req.onreadystatechange = function() {
             if (req.readyState === 4) {
                 if (req.status === 0 || req.status === 200) {
-                    CONTEXT.decodeAudioData(req.response, function(buffer) {
+                    MUSIC.decodeAudioData(req.response, function(buffer) {
                     fn(buffer);
                     });
                 }
@@ -164,15 +164,15 @@ const Audio = function(URL) {
     };
 
     const playSound = function(buffer) {  
-        const source = CONTEXT.createBufferSource();
-        const gainNode = CONTEXT.createGain();
+        const source = MUSIC.createBufferSource();
+        const gainNode = MUSIC.createGain();
         source.buffer = buffer;
-        gainNode.gain.setValueAtTime(0, CONTEXT.currentTime)
-        gainNode.gain.linearRampToValueAtTime(0.4, CONTEXT.currentTime + 10)
-        gainNode.connect(CONTEXT.destination);
+        gainNode.gain.setValueAtTime(0, MUSIC.currentTime)
+        gainNode.gain.linearRampToValueAtTime(0.4, MUSIC.currentTime + 10)
+        gainNode.connect(MUSIC.destination);
         source.connect(gainNode);
         source.loop = true;
-        source.start(CONTEXT.currentTime + 1);
+        source.start(MUSIC.currentTime + 1);
     };
 
     getAudioBuffer(URL, function(buffer) {
@@ -182,17 +182,23 @@ const Audio = function(URL) {
 
 
 const Controller= function(){
-    $('#music').on('click',function(event){
+    $('body').on('click',function(event){
         event.preventDefault();
-        if($(this).attr('music')==='on'){
-            $(this).attr({'music':'off'});
-            $(this).attr({'src':'assets/icon/music_off.png'});
-            CONTEXT.suspend();
-        }else{
-            $(this).attr({'music':'on'});
-            $(this).attr({'src':'assets/icon/music_on.png'});
-            CONTEXT.resume();
+        if(!MUSIC){
+            new Audio('https://snst-lab.github.io/shuffling/public/assets/audio/loop.mp3');
         }
+    });
+    $('#music-on').on('click',function(event){
+        event.preventDefault();
+        $('#music-off').show();
+        $('#music-on').hide();
+        MUSIC.suspend();
+    });
+    $('#music-off').on('click',function(event){
+        event.preventDefault();
+        $('#music-on').show();
+        $('#music-off').hide();
+        MUSIC.resume();
     });
     $('#share').on('click',function(event){
         event.preventDefault();
@@ -219,13 +225,12 @@ const Controller= function(){
     $('.social.google a').attr({'href':'https://plus.google.com/share?url=https://snst-lab.github.io/shuffling/public/redirect?text='+QUERY['text'] });
     $('.social.line a').attr({'href':'http://line.me/R/msg/text/?https://snst-lab.github.io/shuffling/public/redirect?text='+QUERY['text'] });
     $('.social').on('click',function(){
-        CONTEXT.suspend();
+        MUSIC.suspend();
     });
 }
 
 
 window.onload = function () {
-    new Audio('https://snst-lab.github.io/shuffling/public/assets/audio/loop.mp3');
     new Shuffling();
     new Speech();
     new Controller();
