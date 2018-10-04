@@ -182,13 +182,6 @@ const Audio = function(URL) {
 
 
 const Controller= function(){
-    $('body').on('click',function(event){
-        event.preventDefault();
-        if(typeof MUSIC==='undefined'){
-            console.log('start');
-            new Audio('https://snst-lab.github.io/shuffling/public/assets/audio/loop.mp3');
-        }
-    });
     $('#music-on').on('click',function(event){
         event.preventDefault();
         $('#music-off').show();
@@ -232,6 +225,7 @@ const Controller= function(){
 
 
 window.onload = function () {
+    new Audio('https://snst-lab.github.io/shuffling/public/assets/audio/loop.mp3');
     new Shuffling();
     new Speech();
     new Controller();
