@@ -142,7 +142,8 @@ const Speech = function () {
 }
 
 
-const Audio = function(URL) {
+const Audio = function(url) {
+    const URL = url || 'https://snst-lab.github.io/shuffling/public/assets/audio/loop.mp3';
     window.AudioContext = window.AudioContext || window.webkitAudioContext;  
     window.MUSIC = new AudioContext();
 
@@ -225,7 +226,7 @@ const Controller= function(){
 
 
 window.onload = function () {
-    new Audio('https://snst-lab.github.io/shuffling/public/assets/audio/loop.mp3');
+    new Audio(QUERY['music']);
     new Shuffling();
     new Speech();
     new Controller();
