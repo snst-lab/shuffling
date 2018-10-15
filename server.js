@@ -178,7 +178,7 @@ const Main = function(app){
             "サンプル",
             "https://snst-lab.github.io/shuffling/public/redirect",
             "メッセージから",
-            "https://snst-lab.github.io/shuffling/public/redirect?text=" + escape(event.message.text).replace(/\\/g, "@@")
+            "https://snst-lab.github.io/shuffling/public/redirect?text=" + escape(event.message.text).replace(/\\/g, "__")
         );
     }
     
