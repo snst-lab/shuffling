@@ -106,7 +106,7 @@ const Shuffling = function(){
 
     Shuffling.DEFAULT_STRINGS = '十三不塔';
     QUERY['text'] = QUERY['text'] ||  Shuffling.DEFAULT_STRINGS;
-    Shuffling.STRING = Shuffling.split(unescape(QUERY['text'].replace(/__/g,'%')));
+    Shuffling.STRING = Shuffling.split(unescape(QUERY['text'].replace(/_/g,'%u')));
     Shuffling.init(Shuffling.STRING);
     Shuffling.changeAction(Shuffling.STRING);
     Shuffling.controller();
